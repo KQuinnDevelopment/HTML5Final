@@ -1,0 +1,216 @@
+﻿/*
+    Author:         Quinn Helm
+    Student Number: 000737479
+    Date Complete:  10/11/2019 (DD/MM/YYYY)
+
+    Statement of Authorship:
+    I, Quinn Helm, student number 000737479, certify that this material is my original work.
+    No other person's work has been used without due acknowledgement and I have not made my work available to anyone else.
+
+    My CSS Logic: if it's something that can be used frequently and needs to be aligned a specific way, or the element has
+                  a special use case, then resort to custom CSS otherwise revert to using bootstrap.
+*/
+
+/* Body Work */
+body
+{
+    background-color: #333333;
+}
+
+h1, h2, h3, h4 {
+    text-align: center;
+    text-shadow: 2px 2px black;
+    color: #660033;
+}
+
+p {
+    margin: 10px auto;
+    padding: 0px 10px;
+    text-align: center;
+    font-weight: bold;
+    color: #333333;
+}
+
+a:hover {
+    color: #333333;
+}
+
+a:visited {
+    color: #ff9933;
+}
+
+#main {
+    width: 95%;
+    height: 100%;
+    margin: 20px auto 0;
+    background-color: #dddddd;
+}
+
+.col {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.row {
+    width: 95%;
+}
+
+footer {
+    text-align: center;
+    font-style: italic;
+    color: white;
+}
+
+/* Specific Sections */
+#content {
+    max-height: 600px;
+    min-height: 300px;
+}
+
+#infobox {
+    background-color: white;
+    border: 2px solid #660033;
+    min-height: 40px;
+    min-width: 80px;
+}
+
+#infobox p {
+    margin: 5px;
+    font-weight: normal;
+    text-align: left;
+}
+
+#infobox h5 {
+    margin: 5px auto;
+    text-align: center;
+}
+
+#filter {
+    overflow: hidden;
+}
+
+#filter:hover {
+    overflow: auto;
+}
+
+#userMap, #filter, #nearbyDirs {
+    max-height: 600px;
+    min-height: 100%;
+    width: 100%;
+}
+
+#userMap {
+    border: 3px solid #660033;
+}
+
+#filter, #nearbyDirs {
+    background-color: white;
+}
+
+#textTarget {
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+}
+
+#textTarget:hover {
+    overflow: auto;
+}
+
+/* comments */
+#commentSection {
+    height: 100%;
+    width: 100%;
+}
+
+.commentTemplate {
+    max-width: 45%;
+    background-color: white;
+}
+
+form {
+    max-width: 45%;
+    background-color: white;
+}
+
+label {
+    font-weight: bold;
+    display: inline-block;
+}
+
+#userName {
+    width: 40%;
+}
+
+#userComment {
+    max-height: 300px;
+    max-width: 97%;
+}
+
+.commentTemplate p {
+    text-align: left;
+}
+
+/* Buttons */
+button {
+    margin: 15px auto;
+    font-weight: bold;
+    background-color: #660033;
+    color: white;
+}
+
+#filter button {
+    display: block;
+    clear: both;
+    width: 50%;
+    word-wrap: inherit;
+    background-color: #660033;
+    color: white;
+}
+
+#btnHolder {
+    width: 90%;
+    margin: auto;
+}
+
+#btnHolder button {
+    min-width: 40%;
+    word-wrap: inherit;
+    background-color: #660033;
+    color: white;
+}
+
+#clearBtn {
+    width: 90%;
+    background-color: #660033;
+    color: white;
+}
+
+#commentsBtn {
+    width: 20%;
+    display: block;
+    text-align: center;
+    background-color: #660033;
+    color: white;
+}
+
+#sub {
+    width: 30%;
+    margin-bottom: 1%;
+    background-color: #660033;
+    color: white;
+}
+
+.hideComms {
+    float: right;
+}
+
+/* special */
+.error {
+    padding: 20px;
+    font-size: large;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px darkred;
+    text-align: center;
+}

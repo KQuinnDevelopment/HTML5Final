@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Developing Burlington</title>
+
+    <!--
+        Author:         Quinn Helm
+        Student Number: 000737479
+        Date Complete:  10/11/2019 (DD/MM/YYYY)
+
+        Statement of Authorship:
+        I, Quinn Helm, student number 000737479, certify that this material is my original work.
+        No other person's work has been used without due acknowledgement and I have not made my work available to anyone else.
+    -->
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- bing maps -->
+    <script type="text/javascript"
+            src="https://www.bing.com/api/maps/mapcontrol?key=bKJtdEjTsGh4ePaN8N7G~6esxjVqAaG-67TwJ4Acw_Q~AhmarDtHWr3ExP7daOUuC8iDF1JOiNUpYhsUgi1OReZHgw9xzhVhhLuGyLbzGaJ4" async defer>
+    </script>
+    <!-- my stylesheet -->
+    <link rel="stylesheet" href="project.css">
+    <!-- my csv file... -->
+    <script rel="text/javascript" src="scripts/csvOutput.js"></script>
+</head>
+<body onload="load();">
+    <div id="main">
+        <div class="container-fluid">
+            <div class="row mx-auto">
+                <div class="col">
+                    <h1 class="mx-auto my-2">Developing Burlington</h1>
+                    <p>Data taken from <a href="https://navburl-burlington.opendata.arcgis.com/">Navigate Burlington</a> on:</p>
+                    <p style="text-decoration: underline">08/11/2019 (DD/MM/YYYY)</p>
+                </div>
+            </div>
+            <div id="content" class="row mx-auto">
+                <div id="filter" class="col p-0">
+                    <h4 class="mx-auto my-2">Map Filters</h4>
+                    <p class="p-1">What kind of property are you looking for?</p>
+                    <!-- filter options goes here -->
+                    <button id="allBtn" onclick="filterCategory('all')" class="btn text-truncate">All</button>
+                    <button id="commsBtn" onclick="filterCategory('commercial')" class="btn text-truncate">Commercial</button>
+                    <button id="indBtn" onclick="filterCategory('industrial')" class="btn text-truncate">Industrial</button>
+                    <button id="mixBtn" onclick="filterCategory('mixed')" class="btn text-truncate">Mixed Use</button>
+                    <p class="p-1">Nearby Location Filters</p>
+                    <button onclick="nearbyTypes(false, 'all')" class="btn text-truncate">Gas, Bus, and Coffee</button>
+                    <button onclick="nearbyTypes(false, 'x')" class="btn text-truncate">Gas Stations</button>
+                    <button onclick="nearbyTypes(false, 'bus')" class="btn text-truncate">Bus Stations</button>
+                    <button onclick="nearbyTypes(false, 'coffee')" class="btn text-truncate">Coffee Shops</button>
+                </div>
+                <div class="col-6">
+                    <!-- map goes here -->
+                    <div id="userMap"></div>
+                </div>
+                <div id="nearbyDirs" class="col p-0">
+                    <!-- directions / nearby items -->
+                    <div id="btnHolder">
+                        <button id="directionsBtn" onclick="toggle('directions')" class="btn text-truncate">Directions</button>
+                        <button id="nearbyBtn" onclick="toggle('nearby')" class="btn text-truncate">What's Nearby</button>
+                    </div>
+                    <div id="textTarget"></div>
+                    <button id="clearBtn" onclick="clearTextbox()" class="btn btn-block text-truncate">Clear</button>
+                </div>
+            </div>
+            <div class="row mx-auto">
+                <h3 class="mx-auto my-2">Comments</h3>
+                <!-- this is where the comments go -->
+                <div id="commentSection" class="mx-auto p-0">
+                    <p>Comments will appear here when a location has been selected from the map.</p>
+                    <div id="commsTarget"></div>
+                    <button id="commentsBtn" onclick="loadMore()" class="btn text-truncate mx-auto my-2">Load More</button>
+                    <form class="mx-auto my-2 py-1">
+                        <p class="mt-2">Did you enjoy visiting one of these locations?</p>
+                        <p class="my-1">Select a pin to leave a comment!</p>
+                        <label class="mx-1 my-1 px-2">Name:</label>
+                        <input name="userName" id="userName" type="text" class="form-control mx-2 my-1 p-1" />
+                        <label class="mx-1 my-1 px-2">Comment: </label>
+                        <textarea name="userComment" id="userComment" class="form-control mx-2 my-1"></textarea>
+                        <button id="sub" onclick="saveComment();" class="mx-auto btn btn-block">Submit Comment</button>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <footer class="p-1">2019 - Quinn Helm, 000737479</footer>
+    <!-- my javascript -->
+    <script type="text/javascript" src="scripts/mapscript.js"></script>
+    <script type="text/javascript" src="scripts/commentscript.js"></script>
+    <script type="text/javascript" src="scripts/mobiledetect.js"></script>
+</body>
+</html>
